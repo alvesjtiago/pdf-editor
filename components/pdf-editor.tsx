@@ -88,7 +88,7 @@ export default function PDFEditor() {
             currentPage - 1,
             file.type.split('/')[1] as 'jpg' | 'png',
           )
-          setCurrentPDF(newPDF.buffer)
+          setCurrentPDF(newPDF.buffer as ArrayBuffer)
         }
       }
       input.click()
@@ -104,7 +104,7 @@ export default function PDFEditor() {
       console.log('Merging pdfs')
       const mergedPDF = await PDFUtils.mergePDFs(pdfBuffers)
       console.log('Merged pdfs')
-      setCurrentPDF(mergedPDF.buffer)
+      setCurrentPDF(mergedPDF.buffer as ArrayBuffer)
       setCurrentPage(1)
     }
   }
