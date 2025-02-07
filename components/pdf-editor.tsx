@@ -67,7 +67,7 @@ export default function PDFEditor() {
           { x, y },
           currentPage - 1,
         )
-        setCurrentPDF(newPDF.buffer)
+        setCurrentPDF(newPDF.buffer as ArrayBuffer)
       }
     } else if (tool === 'image') {
       const input = document.createElement('input')
